@@ -1,4 +1,4 @@
-class Golosina {
+ class Golosina {
   var property precio
   const property sabor 
   var peso
@@ -80,4 +80,14 @@ class Chocolatin {
     pesoNuevo = pesoNuevo - 2
   }
 } 
+ 
+ class BomBonDuro inherits Bombon {
+   method gradoDureza() {
+    if ( peso > 12){
+
+    }
+   }
+   
+ }
+
  
