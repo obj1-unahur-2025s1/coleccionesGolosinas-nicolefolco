@@ -1,10 +1,3 @@
- class Golosina {
-  var property precio
-  const property sabor 
-  var peso
-  method contieneGluten() {}
-
-}
 
 class Bombon {
   var peso = 15
@@ -80,14 +73,30 @@ class Chocolatin {
     pesoNuevo = pesoNuevo - 2
   }
 } 
+
+class GolosinaBaniada {
+  var property golosinaInterior
+  var pesoBanio = 4
+  
+  method peso() = golosinaInterior.peso() + pesoBanio
+  method precio() { return golosinaInterior.precio() + 2 }
+  method sabor() = golosinaInterior.sabor()
+  method contieneGluten() { return golosinaInterior.contieneGluten() }
+  method recibeUnMordisco() {
+   return (self.peso() - 2).max(0)
+  }
+
+}
  
- class BomBonDuro inherits Bombon {
-   method gradoDureza() {
-    if ( peso > 12){
+class TuttiFrutti {
+  var peso = 5
+  var property contieneGluten
+  const sabores = ["frutilla", "chocolate", "naranja"]
+  var saborActual = 0
 
-    }
-   }
-   
- }
+  method recibeUnMordisco()  { saborActual += 1}
+  method sabor() { sabores.get(saborActual % 3) }
+  method precio() { if(contieneGluten){ return 10 } else { return 7 } }
 
+}
  
